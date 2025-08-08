@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(#000010, #000030);
+      background: radial-gradient(ellipse at top, #020024, #090979, #000);
       color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -21,6 +21,7 @@
       font-size: 3em;
       margin-bottom: 40px;
       text-align: center;
+      text-shadow: 0 0 10px #00f0ff;
     }
 
     .button-grid {
@@ -32,31 +33,58 @@
     }
 
     .card-button {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0a0a0a;
+      border: 2px solid #00ffff;
       border-radius: 15px;
       padding: 20px;
       text-align: center;
-      transition: 0.3s;
       text-decoration: none;
-      color: white;
+      color: #ffffff;
+      transition: 0.4s;
+      box-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff33, inset 0 0 10px #00ffff55;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card-button:hover {
-      background-color: rgba(30, 144, 255, 0.2);
-      transform: scale(1.03);
+    .card-button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #00ffff33 10%, transparent 70%);
+      animation: shine 3s linear infinite;
+      z-index: 0;
+    }
+
+    .card-button h2,
+    .card-button p {
+      position: relative;
+      z-index: 1;
     }
 
     .card-button h2 {
       margin: 0 0 10px;
       font-size: 1.3em;
-      color: #00bfff;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffffaa;
     }
 
     .card-button p {
       margin: 0;
       font-size: 0.95em;
       color: #ccc;
+    }
+
+    .card-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffff, 0 0 40px #00ffff88, inset 0 0 15px #00ffff55;
+    }
+
+    @keyframes shine {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
