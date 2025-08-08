@@ -2,136 +2,175 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>spaceNull's</title>
+  <title>spaceNull — Космос</title>
   <style>
-    body {
+    /* ОБЩИЕ СТИЛИ */
+    * {
       margin: 0;
-      height: 100vh;
-      background: black;
-      overflow: hidden;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-[Uploading index.html…]()<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>spaceNull – Космос</title>
-  <style>
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1477201389074-1863f668fac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
     }
-    nav {
-      background: #111;
-      padding: 15px;
+
+    header {
       text-align: center;
+      padding: 100px 20px 60px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #aaa;
+    }
+
+    /* НАВИГАЦИЯ */
+    nav {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 15px;
       position: sticky;
       top: 0;
       z-index: 999;
     }
-    nav button {
+
+    nav .nav-button {
       margin: 10px;
-      padding: 10px 20px;
-      background: #222;
-      color: #fff;
-      border: none;
+      padding: 12px 20px;
+      background: none;
+      border: 2px solid #0ff;
+      color: #0ff;
+      font-size: 1em;
+      border-radius: 30px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
-    nav button:hover {
-      background: #444;
+
+    nav .nav-button:hover {
+      background: #0ff;
+      color: #000;
+      box-shadow: 0 0 10px #0ff;
     }
+
+    /* РАЗДЕЛЫ */
     section {
       padding: 100px 20px;
-      border-bottom: 1px solid #333;
+      background: rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid #444;
     }
-    h2 {
+
+    section h2 {
+      color: #00ffff;
+      text-shadow: 0 0 10px #0ff;
+      margin-bottom: 10px;
+    }
+
+    /* КНОПКИ ВВЕРХ/ВНИЗ */
+    .scroll-btn {
+      position: fixed;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.6);
       color: #0ff;
+      border: 2px solid #0ff;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background: #0ff;
+      color: #000;
+    }
+
+    #scroll-up {
+      bottom: 80px;
+    }
+
+    #scroll-down {
+      bottom: 20px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Шапка -->
+  <header>
+    <h1>spaceNull</h1>
+    <p>Твоё путешествие в космос начинается здесь</p>
+  </header>
+
+  <!-- Навигация -->
   <nav>
-    <button onclick="location.href='#galaxies'">Галактики</button>
-    <button onclick="location.href='#blackholes'">Чёрные дыры</button>
-    <button onclick="location.href='#planets'">Планеты</button>
-    <button onclick="location.href='#stars'">Звёзды</button>
-    <button onclick="location.href='#missions'">Космические миссии</button>
-    <button onclick="location.href='#future'">Будущее космоса</button>
+    <button class="nav-button" onclick="location.href='#galaxies'">Галактики</button>
+    <button class="nav-button" onclick="location.href='#blackholes'">Чёрные дыры</button>
+    <button class="nav-button" onclick="location.href='#planets'">Планеты</button>
+    <button class="nav-button" onclick="location.href='#stars'">Звёзды</button>
+    <button class="nav-button" onclick="location.href='#missions'">Миссии</button>
+    <button class="nav-button" onclick="location.href='#future'">Будущее</button>
   </nav>
 
+  <!-- Разделы -->
   <section id="galaxies">
     <h2>Галактики</h2>
-    <p>Галактики — это гигантские системы, состоящие из миллиардов звёзд, планет, газа и пыли. Самая известная — Млечный Путь.</p>
+    <p>Массивные системы из звёзд, газа, пыли и тёмной материи. Мы живём в Млечном Пути — спиральной галактике.</p>
   </section>
 
   <section id="blackholes">
     <h2>Чёрные дыры</h2>
-    <p>Чёрные дыры — области пространства с гравитацией настолько сильной, что ничто, даже свет, не может их покинуть.</p>
+    <p>Небесные объекты с колоссальной гравитацией. Даже свет не может вырваться из их горизонта событий.</p>
   </section>
 
   <section id="planets">
     <h2>Планеты</h2>
-    <p>Планеты — небесные тела, вращающиеся вокруг звёзд. В нашей Солнечной системе их 8, включая Землю.</p>
+    <p>Планеты — тела, вращающиеся вокруг звёзд. У Земли — жизнь, у Юпитера — мощные бури, у Марса — загадочное прошлое.</p>
   </section>
 
   <section id="stars">
     <h2>Звёзды</h2>
-    <p>Звёзды — гигантские шары плазмы, испускающие свет и тепло. Солнце — ближайшая к нам звезда.</p>
+    <p>Гигантские огненные шары. Их свет доходит до нас спустя миллионы лет, а некоторые уже давно угасли.</p>
   </section>
 
   <section id="missions">
     <h2>Космические миссии</h2>
-    <p>Миссии вроде Apollo, Voyager и SpaceX расширили наши знания о Вселенной и возможностях путешествий в космос.</p>
+    <p>От «Восток-1» до «Starship» — человечество покоряет космос, отправляя зонды, спутники и людей за пределы Земли.</p>
   </section>
 
   <section id="future">
     <h2>Будущее космоса</h2>
-    <p>В будущем нас ждёт освоение Марса, постройка орбитальных станций и, возможно, контакт с внеземными цивилизациями.</p>
+    <p>Новая эра — освоение Марса, космические станции, искусственный интеллект и контакт с внеземным разумом.</p>
   </section>
 
-</body>
-</html>
+  <!-- Кнопки вверх/вниз -->
+  <div id="scroll-up" class="scroll-btn" onclick="scrollToTop()">🔼</div>
+  <div id="scroll-down" class="scroll-btn" onclick="scrollToBottom()">🔽</div>
 
-
-    h1 {
-      font-size: 3em;
-      text-shadow: 0 0 15px white;
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/stars.png') repeat;
-      animation: moveStars 100s linear infinite;
-      z-index: -1;
+    function scrollToBottom() {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     }
+  </script>
 
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: -10000px 5000px; }
-    }
-
-    .subtitle {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="stars"></div>
-  <h1>Добро пожаловать в spaceNull's</h1>
-  <div class="subtitle">Твое путешествие начинается здесь</div>
 </body>
 </html>
