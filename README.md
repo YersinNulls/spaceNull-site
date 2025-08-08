@@ -3,112 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Неоновые кнопки с платформами</title>
+<title>Неоновые кнопки с окнами</title>
 <style>
     body {
-        background-color: #000;
+        background: #000;
         color: white;
         font-family: Arial, sans-serif;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 50px;
     }
 
-    .neon-button {
-        font-size: 20px;
-        color: #fff;
+    /* Стиль кнопок */
+    .neon-btn {
+        display: inline-block;
         padding: 15px 30px;
-        margin: 15px;
-        border: none;
+        margin: 10px;
+        font-size: 18px;
+        color: #fff;
+        border: 2px solid #0ff;
+        border-radius: 10px;
+        background: transparent;
         cursor: pointer;
-        border-radius: 5px;
-        background: none;
-        box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
-        transition: all 0.3s ease;
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+        box-shadow: 0 0 5px #0ff, 0 0 20px #0ff inset;
+        transition: 0.3s;
     }
 
-    .neon-button:hover {
-        box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    .neon-btn:hover {
+        background: #0ff;
+        color: #000;
+        box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
     }
 
-    /* Стили модального окна */
+    /* Модальное окно */
     .modal {
         display: none;
         position: fixed;
         z-index: 1000;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
         background-color: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
     }
 
     .modal-content {
-        background-color: #111;
-        margin: auto;
+        background: #111;
+        border: 2px solid #0ff;
         padding: 20px;
-        border: 1px solid #0ff;
-        width: 50%;
-        box-shadow: 0 0 15px #0ff;
         border-radius: 10px;
-        text-align: left;
+        width: 300px;
+        text-shadow: 0 0 5px #0ff;
+        box-shadow: 0 0 20px #0ff;
     }
 
     .close {
         color: #0ff;
         float: right;
-        font-size: 28px;
-        font-weight: bold;
+        font-size: 24px;
         cursor: pointer;
-    }
-
-    .close:hover {
-        color: #fff;
     }
 </style>
 </head>
 <body>
 
-<h1>Неоновые кнопки с платформами</h1>
+<h1>Неоновые кнопки с окнами</h1>
 
-<!-- Кнопки -->
-<button class="neon-button" onclick="openModal('modal1')">Платформа 1</button>
-<button class="neon-button" onclick="openModal('modal2')">Платформа 2</button>
-<button class="neon-button" onclick="openModal('modal3')">Платформа 3</button>
+<!-- 6 кнопок -->
+<button class="neon-btn" onclick="openModal(1)">Кнопка 1</button>
+<button class="neon-btn" onclick="openModal(2)">Кнопка 2</button>
+<button class="neon-btn" onclick="openModal(3)">Кнопка 3</button>
+<button class="neon-btn" onclick="openModal(4)">Кнопка 4</button>
+<button class="neon-btn" onclick="openModal(5)">Кнопка 5</button>
+<button class="neon-btn" onclick="openModal(6)">Кнопка 6</button>
 
-<!-- Модальные окна -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal1')">&times;</span>
-        <h2>Платформа 1</h2>
-        <p>Описание первой платформы. Здесь можно рассказать, что она делает и какие функции есть.</p>
-    </div>
-</div>
-
-<div id="modal2" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal2')">&times;</span>
-        <h2>Платформа 2</h2>
-        <p>Описание второй платформы. Тут можно добавить преимущества и уникальные особенности.</p>
-    </div>
-</div>
-
-<div id="modal3" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modal3')">&times;</span>
-        <h2>Платформа 3</h2>
-        <p>Описание третьей платформы. Опиши, чем она полезна и кому подойдёт.</p>
-    </div>
-</div>
+<!-- Окна -->
+<div id="modal1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(1)">&times;</span><h2>Платформа 1</h2><p>Описание платформы 1.</p></div></div>
+<div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(2)">&times;</span><h2>Платформа 2</h2><p>Описание платформы 2.</p></div></div>
+<div id="modal3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(3)">&times;</span><h2>Платформа 3</h2><p>Описание платформы 3.</p></div></div>
+<div id="modal4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(4)">&times;</span><h2>Платформа 4</h2><p>Описание платформы 4.</p></div></div>
+<div id="modal5" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(5)">&times;</span><h2>Платформа 5</h2><p>Описание платформы 5.</p></div></div>
+<div id="modal6" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(6)">&times;</span><h2>Платформа 6</h2><p>Описание платформы 6.</p></div></div>
 
 <script>
-function openModal(id) {
-    document.getElementById(id).style.display = "block";
+function openModal(num) {
+    document.getElementById("modal" + num).style.display = "flex";
 }
-
-function closeModal(id) {
-    document.getElementById(id).style.display = "none";
+function closeModal(num) {
+    document.getElementById("modal" + num).style.display = "none";
 }
 </script>
 
