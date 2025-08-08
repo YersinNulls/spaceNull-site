@@ -19,9 +19,28 @@
 
     h1 {
       font-size: 3em;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
       text-align: center;
-      text-shadow: 0 0 10px #00f0ff;
+      text-shadow: 0 0 15px #00f0ff;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 700px;
+    }
+
+    .intro-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 50px;
+      box-shadow: 0 0 10px #00ffff44;
+      max-width: 800px;
+      text-align: center;
     }
 
     .button-grid {
@@ -44,24 +63,7 @@
       box-shadow: 0 0 10px #00ffff, 0 0 30px #00ffff33, inset 0 0 10px #00ffff55;
       position: relative;
       overflow: hidden;
-    }
-
-    .card-button::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, #00ffff33 10%, transparent 70%);
-      animation: shine 3s linear infinite;
-      z-index: 0;
-    }
-
-    .card-button h2,
-    .card-button p {
-      position: relative;
-      z-index: 1;
+      cursor: pointer;
     }
 
     .card-button h2 {
@@ -82,42 +84,73 @@
       box-shadow: 0 0 15px #00ffff, 0 0 40px #00ffff88, inset 0 0 15px #00ffff55;
     }
 
-    @keyframes shine {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .presentation {
+      display: none;
+      max-width: 700px;
+      background-color: rgba(255, 255, 255, 0.07);
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 0 15px #00ffff33;
     }
   </style>
 </head>
 <body>
 
-  <h1>SpaceNull — Космический портал</h1>
+  <h1>SpaceNull</h1>
+  <div class="subtitle">Твоя цифровая станция для путешествия по вселенной</div>
+
+  <div class="intro-box">
+    <p>
+      Добро пожаловать в <strong>SpaceNull</strong> — космический портал, созданный для всех, кто мечтает заглянуть за пределы Земли.
+    </p>
+  </div>
 
   <div class="button-grid">
-    <a href="#" class="card-button">
+    <div class="card-button" onclick="showText('planets')">
       <h2>Планеты</h2>
       <p>Исследуй уникальные миры солнечной системы.</p>
-    </a>
-    <a href="#" class="card-button">
+    </div>
+    <div class="card-button" onclick="showText('stars')">
       <h2>Звёзды</h2>
-      <p>Узнай, как рождаются, живут и умирают звёзды.</p>
-    </a>
-    <a href="#" class="card-button">
+      <p>Как рождаются и умирают светила?</p>
+    </div>
+    <div class="card-button" onclick="showText('blackholes')">
       <h2>Чёрные дыры</h2>
-      <p>Открой тайны самых загадочных объектов космоса.</p>
-    </a>
-    <a href="#" class="card-button">
+      <p>Загадочные монстры пространства и времени.</p>
+    </div>
+    <div class="card-button" onclick="showText('galaxies')">
       <h2>Галактики</h2>
-      <p>Погрузись в путешествие по миллиардам галактик.</p>
-    </a>
-    <a href="#" class="card-button">
+      <p>Миллиарды звёзд в каждом космическом острове.</p>
+    </div>
+    <div class="card-button" onclick="showText('missions')">
       <h2>Космические миссии</h2>
-      <p>Следи за историями NASA, SpaceX и других.</p>
-    </a>
-    <a href="#" class="card-button">
-      <h2>Будущее человечества</h2>
+      <p>NASA, SpaceX и будущее человечества.</p>
+    </div>
+    <div class="card-button" onclick="showText('future')">
+      <h2>Будущее</h2>
       <p>Как мы будем жить и работать в космосе?</p>
-    </a>
+    </div>
   </div>
+
+  <div id="presentation" class="presentation"></div>
+
+  <script>
+    const texts = {
+      planets: "Планеты — это уникальные миры, от горячего Меркурия до ледяного Нептуна. Каждая из них имеет свои тайны, спутники и загадки.",
+      stars: "Звёзды — гигантские шары плазмы, рождающиеся в туманностях. Они создают свет, тепло и в итоге — элементы жизни.",
+      blackholes: "Чёрные дыры — плотные области, из которых не может вырваться даже свет. Они деформируют пространство и время.",
+      galaxies: "Галактики — огромные системы звёзд, пыли и тьмы. Мы живём в одной из них — Млечном Пути.",
+      missions: "Космические миссии, такие как Apollo, Voyager или Starship, продвигают нас к будущему среди звёзд.",
+      future: "Будущее человечества — это колонии на Марсе, орбитальные станции, космические города. Всё только начинается."
+    };
+
+    function showText(key) {
+      const box = document.getElementById('presentation');
+      box.style.display = 'block';
+      box.innerText = texts[key];
+    }
+  </script>
 
 </body>
 </html>
