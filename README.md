@@ -3,94 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Неоновые кнопки с окнами</title>
+<title>Космос</title>
 <style>
     body {
-        background: #000;
-        color: white;
+        margin: 0;
         font-family: Arial, sans-serif;
-        text-align: center;
-        padding-top: 50px;
-    }
-
-    /* Стиль кнопок */
-    .neon-btn {
-        display: inline-block;
-        padding: 15px 30px;
-        margin: 10px;
-        font-size: 18px;
-        color: #fff;
-        border: 2px solid #0ff;
-        border-radius: 10px;
-        background: transparent;
-        cursor: pointer;
-        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-        box-shadow: 0 0 5px #0ff, 0 0 20px #0ff inset;
-        transition: 0.3s;
-    }
-
-    .neon-btn:hover {
-        background: #0ff;
-        color: #000;
-        box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
-    }
-
-    /* Модальное окно */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0; top: 0;
-        width: 100%; height: 100%;
-        background-color: rgba(0,0,0,0.8);
+        background-color: #000;
+        display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        color: white;
     }
-
-    .modal-content {
-        background: #111;
-        border: 2px solid #0ff;
-        padding: 20px;
+    h1 {
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px cyan, 0 0 20px blue;
+    }
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .neon-button {
+        padding: 15px 30px;
+        font-size: 18px;
+        color: white;
+        background: transparent;
+        border: 2px solid cyan;
         border-radius: 10px;
-        width: 300px;
-        text-shadow: 0 0 5px #0ff;
-        box-shadow: 0 0 20px #0ff;
-    }
-
-    .close {
-        color: #0ff;
-        float: right;
-        font-size: 24px;
         cursor: pointer;
+        text-shadow: 0 0 5px cyan, 0 0 10px blue;
+        box-shadow: 0 0 10px cyan, 0 0 20px blue;
+        transition: 0.3s;
+    }
+    .neon-button:hover {
+        background-color: cyan;
+        color: black;
+        box-shadow: 0 0 20px cyan, 0 0 40px blue;
     }
 </style>
 </head>
 <body>
 
-<h1>Неоновые кнопки с окнами</h1>
-
-<!-- 6 кнопок -->
-<button class="neon-btn" onclick="openModal(1)">Кнопка 1</button>
-<button class="neon-btn" onclick="openModal(2)">Кнопка 2</button>
-<button class="neon-btn" onclick="openModal(3)">Кнопка 3</button>
-<button class="neon-btn" onclick="openModal(4)">Кнопка 4</button>
-<button class="neon-btn" onclick="openModal(5)">Кнопка 5</button>
-<button class="neon-btn" onclick="openModal(6)">Кнопка 6</button>
-
-<!-- Окна -->
-<div id="modal1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(1)">&times;</span><h2>Платформа 1</h2><p>Описание платформы 1.</p></div></div>
-<div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(2)">&times;</span><h2>Платформа 2</h2><p>Описание платформы 2.</p></div></div>
-<div id="modal3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(3)">&times;</span><h2>Платформа 3</h2><p>Описание платформы 3.</p></div></div>
-<div id="modal4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(4)">&times;</span><h2>Платформа 4</h2><p>Описание платформы 4.</p></div></div>
-<div id="modal5" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(5)">&times;</span><h2>Платформа 5</h2><p>Описание платформы 5.</p></div></div>
-<div id="modal6" class="modal"><div class="modal-content"><span class="close" onclick="closeModal(6)">&times;</span><h2>Платформа 6</h2><p>Описание платформы 6.</p></div></div>
+<h1>Мир Космоса</h1>
+<div class="button-container">
+    <button class="neon-button" onclick="openWindow('Галактики', 'Огромные системы звезд, газа и туманностей.')">Галактики</button>
+    <button class="neon-button" onclick="openWindow('Планеты', 'Мир, где могут быть океаны, горы и жизнь.')">Планеты</button>
+    <button class="neon-button" onclick="openWindow('Звезды', 'Огненные шары, дающие свет и тепло.')">Звезды</button>
+    <button class="neon-button" onclick="openWindow('Чёрные дыры', 'Объекты с гравитацией, из которой ничто не уходит.')">Чёрные дыры</button>
+    <button class="neon-button" onclick="openWindow('Кометы', 'Ледяные странники, пролетающие мимо солнца.')">Кометы</button>
+    <button class="neon-button" onclick="openWindow('Туманности', 'Красивые облака газа и пыли в космосе.')">Туманности</button>
+</div>
 
 <script>
-function openModal(num) {
-    document.getElementById("modal" + num).style.display = "flex";
-}
-function closeModal(num) {
-    document.getElementById("modal" + num).style.display = "none";
+function openWindow(title, description) {
+    const newWin = window.open("", "_blank", "width=400,height=300");
+    newWin.document.write(`
+        <html>
+        <head>
+            <title>${title}</title>
+            <style>
+                body {
+                    font-family: Arial;
+                    background-color: black;
+                    color: white;
+                    text-align: center;
+                    padding: 20px;
+                }
+                h2 { color: cyan; }
+            </style>
+        </head>
+        <body>
+            <h2>${title}</h2>
+            <p>${description}</p>
+        </body>
+        </html>
+    `);
 }
 </script>
 
