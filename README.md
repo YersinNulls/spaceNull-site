@@ -1,122 +1,151 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nissan GT-R</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<title>Ерсін — Мой сайт</title>
 <style>
     body {
-        margin: 0;
-        font-family: 'Orbitron', sans-serif;
-        background: black;
+        background: radial-gradient(ellipse at bottom, #0d1b2a, #000);
+        font-family: Arial, sans-serif;
         color: white;
-        overflow-x: hidden;
-    }
-
-    header {
-        height: 100vh;
-        background: url('https://upload.wikimedia.org/wikipedia/commons/0/07/Nissan_GT-R_Track_Edition.jpg') center/cover fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         text-align: center;
+        padding-top: 50px;
     }
-
-    header h1 {
-        font-size: 4rem;
-        color: #0ff;
-        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
     }
-
-    section {
-        padding: 60px 20px;
-        text-align: center;
+    p {
+        font-size: 18px;
+        margin-bottom: 40px;
     }
-
-    .stats {
-        background: #111;
-        padding: 50px 20px;
-    }
-
-    .stats h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #0ff;
-        text-shadow: 0 0 5px #0ff;
-    }
-
-    .stats p {
-        font-size: 1.3rem;
-        line-height: 1.6;
-    }
-
-    .parallax {
-        height: 80vh;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .img1 { background-image: url('https://images.unsplash.com/photo-1614549323175-38ad2c7b8ca1'); }
-    .img2 { background-image: url('https://images.unsplash.com/photo-1614549323180-f1b3b6ed8e2b'); }
-
     .buttons {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-gap: 20px;
         justify-content: center;
-        gap: 20px;
-        margin-top: 40px;
     }
-
-    .neon-btn {
-        padding: 15px 30px;
-        font-size: 1.2rem;
-        color: #0ff;
-        border: 2px solid #0ff;
-        background: transparent;
+    .btn {
+        background: linear-gradient(45deg, #1e3c72, #2a5298);
+        border: none;
+        color: white;
+        padding: 15px;
+        font-size: 16px;
+        border-radius: 10px;
         cursor: pointer;
-        text-shadow: 0 0 5px #0ff;
-        box-shadow: 0 0 10px #0ff, inset 0 0 10px #0ff;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
         transition: 0.3s;
+        text-decoration: none;
+        display: block;
     }
-
-    .neon-btn:hover {
-        background: #0ff;
-        color: black;
-        box-shadow: 0 0 20px #0ff, inset 0 0 20px #0ff;
+    .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
     }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>Nissan GT-R</h1>
-</header>
+<h1>Привет! 👋</h1>
+<p>Меня зовут <b>Ерсін</b> и я умею:</p>
 
-<section class="stats">
-    <h2>Характеристики</h2>
-    <p>Двигатель: 3.8L Twin-Turbo V6</p>
-    <p>Мощность: 565 л.с. (NISMO: 600 л.с.)</p>
-    <p>Разгон 0-100 км/ч: 2.9 секунды</p>
-</section>
+<div class="buttons">
+    <a class="btn" href="python.html">💻 Программировать</a>
+    <a class="btn" href="it.html">🖥 IT</a>
+    <a class="btn" href="hacker.html">🕵️‍♂️ Хакерство</a>
+    <a class="btn" href="design.html">🎨 Дизайн</a>
+    <a class="btn" href="sites.html">🌐 Создавать сайты</a>
+    <a class="btn" href="teach.html">🎯 Обучать других</a>
+</div>
 
-<div class="parallax img1"></div>
-
-<section>
-    <h2>Легенда скорости</h2>
-    <p>Nissan GT-R — культовый японский спорткар, известный своей точной управляемостью и невероятным ускорением.</p>
-</section>
-
-<div class="parallax img2"></div>
-
-<section>
-    <h2>Действия</h2>
-    <div class="buttons">
-        <button class="neon-btn">Купить</button>
-        <button class="neon-btn">Галерея</button>
-        <button class="neon-btn">Контакты</button>
-    </div>
-</section>
-
+</body>
+</html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Программирование — Ерсін</title>
+<style>
+    body {background: radial-gradient(ellipse at bottom, #0d1b2a, #000); font-family: Arial; color: white; text-align: center; padding-top: 50px;}
+    a {color: cyan; text-decoration: none;}
+</style>
+</head>
+<body>
+<h1>💻 Программирование</h1>
+<p>Я умею писать программы на <b>Python</b>, <b>C++</b> и других языках программирования.</p>
+<a href="index.html">⬅ Назад на главную</a>
+</body>
+</html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>IT — Ерсін</title>
+<style>
+    body {background: radial-gradient(ellipse at bottom, #0d1b2a, #000); font-family: Arial; color: white; text-align: center; padding-top: 50px;}
+    a {color: cyan; text-decoration: none;}
+</style>
+</head>
+<body>
+<h1>🖥 IT</h1>
+<p>Я работаю с искусственным интеллектом и умею создавать видео с помощью ИИ.</p>
+<a href="index.html">⬅ Назад на главную</a>
+</body>
+</html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Хакерство — Ерсін</title>
+<style>
+    body {background: radial-gradient(ellipse at bottom, #0d1b2a, #000); font-family: Arial; color: white; text-align: center; padding-top: 50px;}
+    a {color: cyan; text-decoration: none;}
+</style>
+</head>
+<body>
+<h1>🕵️‍♂️ Хакерство</h1>
+<p>Я занимаюсь только <b>этичным хакерством</b> — поиск потерянных данных, восстановление доступа и помощь пользователю по согласию.</p>
+<a href="index.html">⬅ Назад на главную</a>
+</body>
+</html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Дизайн — Ерсін</title>
+<style>
+    body {background: radial-gradient(ellipse at bottom, #0d1b2a, #000); font-family: Arial; color: white; text-align: center; padding-top: 50px;}
+    a {color: cyan; text-decoration: none;}
+</style>
+</head>
+<body>
+<h1>🎨 Дизайн</h1>
+<p>Я владею <b>Blender</b>, <b>Photoshop</b> и умею делать анимации.</p>
+<a href="index.html">⬅ Назад на главную</a>
+</body>
+</html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Сайты — Ерсін</title>
+<style>
+    body {background: radial-gradient(ellipse at bottom, #0d1b2a, #000); font-family: Arial; color: white; text-align: center; padding-top: 50px;}
+    a {color: cyan; text-decoration: none;}
+</style>
+</head>
+<body>
+<h1>🌐 Создание сайтов</h1>
+<p>Хотите заказать сайт? Напишите мне в Telegram: <a href="https://t.me/Yers_b" target="_blank">t.me/Yers_b</a></p>
+<a href="index.html">⬅ Назад на главную</a>
+</body>
+</html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Обучение — Ерсін</title>
+<style>
+    body {background: radial-gradient(ellipse at bottom, #0d1b2a, #000); font-family: Arial; color: white; text-align: center; padding-top: 50px;}
+    a {color: cyan; text-decoration: none;}
+</style>
+</head>
+<body>
+<h1>🎯 Обучение</h1>
+<p>Я могу обучать людей основам программирования, IT и дизайна.</p>
+<a href="index.html">⬅ Назад на главную</a>
 </body>
 </html>
