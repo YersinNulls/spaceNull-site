@@ -56,7 +56,6 @@
     <a class="btn" href="sites.html">🌐 Создавать сайты</a>
     <a class="btn" href="teach.html">🎯 Обучать других</a>
 </div>
-
 </body>
 </html>
 <html lang="ru">
